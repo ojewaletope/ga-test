@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {ApiService} from "../../../services/api.service";
 
 @Component({
   selector: 'app-weather-details',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weather-details.component.scss']
 })
 export class WeatherDetailsComponent implements OnInit {
-
-  constructor() { }
+  weatherDetails$: Observable<any> | undefined;
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.weatherDetails$ = this.apiService.getWeatherDetails()
   }
 
 }
