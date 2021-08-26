@@ -1,0 +1,25 @@
+@import '../../../../sass/_variables';
+
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+    grid-gap: 1rem;
+    place-items: center;
+  font-size: 2rem;
+  margin: 10rem;
+  .page-card {
+    width: 100%;
+    padding: 2rem;
+    background: $whiteBackground;
+    border-radius: 4px;
+    box-shadow: 0px 4px 1rem 3px rgba(0, 0, 0, 0.11);
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .page-wrapper {
+    margin: 3rem;
+  }
+}
