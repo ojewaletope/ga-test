@@ -1,12 +1,15 @@
 
+<div class="container">
+  <h3 class="app-header">weather app for some selected cities</h3>
   <div class="page-wrapper">
     <div *ngFor="let item of weatherDetails$ | async" class="page-card">
-      <div>City: {{item.name}}</div>
-      <div>Temperature: {{item.main.temp}} &deg;C</div>
-      <div>Wind Speed: {{item.wind.speed}}mph</div>
-      <div>
+      <div class="card-img">
         <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="">
       </div>
+      <div>City: {{item.name}}</div>
+      <div>Temperature: <span class="temp">{{item.main.temp}} &deg;C</span></div>
+      <div>Wind Speed: {{item.wind.speed}}mph</div>
     </div>
   </div>
 
+</div>
